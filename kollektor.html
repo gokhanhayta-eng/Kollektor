@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kollektör Kayıt</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b6fd6">
+<link rel="icon" href="icon-192.png">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
 :root{--bg:#f4f6f8;--card:#fff;--tx:#1b2430;--mu:#6b7785;--pr:#0b6fd6;--ok:#1a9c5b;--bd:#d8dee5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -83,6 +86,7 @@ img.pv{width:100%;max-height:200px;object-fit:cover;border-radius:10px;margin-to
 <div class="toast" id="toast"></div>
 
 <script>
+if("serviceWorker" in navigator){try{navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}}
 const $=id=>document.getElementById(id);
 let DB,cur;
 const open=indexedDB.open("kollektor",1);
